@@ -19,7 +19,7 @@ Through trial and testing (which can be seen in the Google Colab Notebook), the 
 ## Usage
 - Clone this repository. We will call this directory as *`$DETECTION_ROOT`*
 ```
-$ git clone https://github.com/kaaanishk/face-detection-optimised
+$ git clone https://github.com/kaaanishk/EasyFaceDetect
 ```
 - Move into the directory
 ```
