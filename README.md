@@ -1,4 +1,4 @@
-# Optimised Face Detection
+# Easy Face Detection
 
 ## Introduction
 This repository uses an implementation of MTCNN in Tensorflow for Python 3.4+. The implementation is based off [FaceNet's implementation of MTCNN](https://github.com/davidsandberg/facenet/tree/master/src/align) which is based on the paper Zhang, K et al. (2016) <sup>[1](#references)</sup>
@@ -16,12 +16,34 @@ Through trial and testing (which can be seen in the Google Colab Notebook), the 
 
 >**Note:** Tan and Triggs Illumination Normalisation will come in handy while extracting features from cropped faces to do Face Recognition, therefore the code is preserved in the repository.
 
+## Usage
+- Clone this repository. We will call this directory as *`$DETECTION_ROOT`*
+```
+$ git clone https://github.com/kaaanishk/face-detection-optimised
+```
+- Move into the directory
+```
+$ cd DETECTION_ROOT
+```
+> **Note:** Change  *`$DETECTION_ROOT`* to the folder name of the cloned repository.
+- Run `detect.py` with required arguments.
+```
+$ python3 detect.py --url [link to photo]
+```
+- The cropped faces would be saved in the `$DETECTION_ROOT/out/`
+> **Note:** Change the `path=/home/kanishk/fd/out/` variable in `detect.py` to change the output folder.
+
+| Optional Finetune Variables      | Default   | Description                                               |
+|:---------------------------------|----------:|:----------------------------------------------------------|
+|--resize_width                    | 600       | Change size of the resized image for preprocessing. The height of the resized image is calculated while preserving the ratio according to the specified width |
+| --gamma                          | 1.6       | Change the gamma correction value for image preprocessing.|
+>**Note:** It is recommended to keep the default values for the optional arguments.
+
 ## Progress
 - [x] Implement and fine-tune basic image pre-processing techniques
 - [x] Implement Tan and Triggs Illumination Normalisation according to Paper
 - [x] Implement MTCNN Face Detection
-- [ ] Crop Faces to `112x112` to pass onto Face Recognition Module
-
+- [x] Crop Faces to `112x112` to pass onto Face Recognition Module
 
 ## References
 
