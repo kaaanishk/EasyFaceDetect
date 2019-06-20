@@ -30,13 +30,15 @@ $ cd DETECTION_ROOT
 ```
 $ python3 detect.py --url [link to photo]
 ```
-- The cropped faces would be saved in the `$DETECTION_ROOT/out/`
-> **Note:** Change the `path=/home/kanishk/fd/out/` variable in `detect.py` to change the output folder.
+- The cropped faces would be saved in the `$DETECTION_ROOT/out/` by default. (Use `--output` to change the output directory)
+> **Note:** The output folder needs to be pre-existing. A new output directory will **not** be automatically created.
 
 | Optional Finetune Variables      | Default   | Description                                               |
 |:---------------------------------|----------:|:----------------------------------------------------------|
 |--resize_width                    | 600       | Change size of the resized image for preprocessing. The height of the resized image is calculated while preserving the ratio according to the specified width |
-| --gamma                          | 1.6       | Change the gamma correction value for image preprocessing.|
+| --gamma                          | 1.6       | Change the gamma correction value for image preprocessing |
+| --output                         | out       | Change the output directory for the cropped faces         |
+
 >**Note:** It is recommended to keep the default values for the optional arguments.
 
 ## Progress
