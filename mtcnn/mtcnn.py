@@ -36,9 +36,9 @@ import cv2
 import numpy as np
 import pkg_resources
 import tensorflow as tf
-from mtcnn.layer_factory import LayerFactory
-from mtcnn.network import Network
-from mtcnn.exceptions import InvalidImage
+from .layer_factory import LayerFactory
+from .network import Network
+from .exceptions import InvalidImage
 
 __author__ = "Iván de Paz Centeno"
 

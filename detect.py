@@ -6,6 +6,7 @@ import utils.helper as helper
 import utils.preprocess as preprocess
 
 import argparse
+import os
 
 # ArgParse
 
@@ -13,6 +14,7 @@ parser = argparse.ArgumentParser(description = "Detect faces and five facial lan
 parser.add_argument("--url", type=str, help='Link to image', )
 parser.add_argument("--resize_width", type=int, help='Specify width of the image after preprocessing; Default:600 (Recommended)', default=600)
 parser.add_argument("--gamma", type=int, help='Gamma Correction Value; Default:1.6 (Recommended)',default=1.6)
+parser.add_argument("--output",type=str, help='Specify name of the output folder; Default: $DETECTION_ROOT/out/',default='out')
 
 args = parser.parse_args()
 
@@ -20,7 +22,7 @@ args = parser.parse_args()
 # Declarations
 
 mtcnn = MTCNN()
-path = "/home/kanishk/fd/out/"
+path = os.getcwd()+'/'+args.output+'/'
 url = args.url
 img = helper.read_from_url(url)
 
